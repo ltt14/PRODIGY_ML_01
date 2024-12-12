@@ -33,6 +33,7 @@ X_train = scaler.fit_transform(X_train)
 X_val = scaler.transform(X_val)
 
 #Building and training the model
+
 model = LinearRegression()
 model.fit(X_train, y_train)
 
@@ -69,3 +70,4 @@ submission = pd.DataFrame({
 })
 submission.to_csv('submission.csv', index=False)
 print("Submission file created: submission.csv")
+###
