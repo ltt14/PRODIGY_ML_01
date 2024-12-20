@@ -8,9 +8,8 @@ from sklearn.metrics import mean_squared_error, r2_score
 import matplotlib.pyplot as plt
 
 # Loading train and test data
-train_data = pd.read_csv('C:\\Users\\cheru\\OneDrive\\Documents\\VSCode\\train.csv')  # Replace with your train.csv file path
-test_data = pd.read_csv('C:\\Users\\cheru\\OneDrive\\Documents\\VSCode\\test.csv')   # Replace with your test.csv file path
-
+train_data = pd.read_csv('C:\\Users\\cheru\\OneDrive\\Documents\\VSCode\\train.csv')
+test_data = pd.read_csv('C:\\Users\\cheru\\OneDrive\\Documents\\VSCode\\test.csv')
 ##Data Preprocessing
 # Display basic information
 print(train_data.info())
@@ -65,9 +64,8 @@ test_predictions = model.predict(test_features)
 
 # Create a submission file
 submission = pd.DataFrame({
-    'Id': test_data['Id'],  # Ensure you include the 'Id' column from the test dataset
+    'Id': test_data['Id'],  # Include the 'Id' column from the test dataset
     'SalePrice': test_predictions
 })
 submission.to_csv('submission.csv', index=False)
 print("Submission file created: submission.csv")
-###
